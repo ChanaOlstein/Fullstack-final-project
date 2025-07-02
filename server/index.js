@@ -9,11 +9,10 @@ import cartRouter from "./routes/cartRouters/cartRouter.js";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 dotenv.config();
+const MONGO_STRING = process.env.MONGO_STRING;
 
 mongoose
-  .connect(
-    "mongodb+srv://ChanaOl:CO1234@cluster0.c8ocdne.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-  )
+  .connect(`${MONGO_STRING}`)
   .then((result) => console.log("connected to DB"))
   .catch((error) => console.log("connection failed"));
 
