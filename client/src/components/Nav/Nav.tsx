@@ -11,10 +11,13 @@ const Nav = () => {
   const currentUser = useAppSelector((state) => state.auth.currentUser);
   const handleLogOut = async () => {
     try {
-      const res = await fetch("http://localhost:3003/auth/logout", {
-        method: "POST",
-        credentials: "include",
-      });
+      const res = await fetch(
+        "https://fullstack-final-project-5bku.onrender.com/auth/logout",
+        {
+          method: "POST",
+          credentials: "include",
+        }
+      );
       if (!res.ok) throw new Error("Logout failed");
       dispatch(setCurrentUser(null));
       dispatch(setCart([]));
