@@ -12,7 +12,8 @@ dotenv.config();
 const MONGO_STRING = process.env.MONGO_STRING;
 
 mongoose
-  .connect(`${MONGO_STRING}`)
+  .connect(MONGO_STRING)
+
   .then((result) => console.log("connected to DB"))
   .catch((error) => console.log("connection failed"));
 
@@ -21,7 +22,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://fullstack-final-project-1.onrender.com",
     credentials: true,
   })
 );
@@ -34,5 +35,7 @@ app.use("/products", productsRouter);
 app.use("/orders", ordersRouter);
 app.use("/carts", cartRouter);
 app.listen(3003, () =>
-  console.log("server is running in port http://localhost:3003")
+  console.log(
+    "server is running in port https://fullstack-final-project-5bku.onrender.com"
+  )
 );

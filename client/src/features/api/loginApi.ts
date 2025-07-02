@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3003";
+const BASE_URL = "https://fullstack-final-project-5bku.onrender.com";
 
 //sign in
 export const registerUser = async (user: {

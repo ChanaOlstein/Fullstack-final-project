@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3003";
+const BASE_URL = "https://fullstack-final-project-5bku.onrender.com";
 
 export async function fetchCart() {
   const res = await fetch(`${BASE_URL}/carts`, { credentials: "include" });

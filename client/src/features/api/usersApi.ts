@@ -1,6 +1,6 @@
 import type { User } from "../Auth/authSlice";
 
-const BASE_URL = "http://localhost:3003";
+const BASE_URL = "https://fullstack-final-project-5bku.onrender.com";
 
 //get  all users
 export const fetchAllUsers = async () => {

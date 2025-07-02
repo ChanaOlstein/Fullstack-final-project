@@ -23,7 +23,9 @@ const App = () => {
 
   // On app load: try to fetch the currently logged-in user (via cookie/session)
   useEffect(() => {
-    fetch("http://localhost:3003/auth/me", { credentials: "include" }) // include cookie for authentication
+    fetch("https://fullstack-final-project-5bku.onrender.com/auth/me", {
+      credentials: "include",
+    }) // include cookie for authentication
       .then((res) => {
         if (!res.ok) throw new Error("Unauthorized");
         return res.json();
