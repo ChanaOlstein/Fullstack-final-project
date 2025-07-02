@@ -37,8 +37,8 @@ router.post("/register", async (req, res) => {
       .cookie("access_token", token, {
         httpOnly: true,
         maxAge: 3 * 24 * 60 * 60 * 1000,
-        sameSite: "lax",
-        secure: false,
+        sameSite: "none",
+        secure: true,
       })
       .send({ message: "user created successfully", user: payload });
   } catch (error) {
@@ -75,8 +75,8 @@ router.post("/login", async (req, res) => {
       .cookie("access_token", token, {
         httpOnly: true,
         maxAge: 3 * 24 * 60 * 60 * 1000,
-        sameSite: "lax",
-        secure: false,
+        sameSite: "none",
+        secure: true,
       })
       .send({ message: "login successfully", user: payload });
   } catch (error) {
