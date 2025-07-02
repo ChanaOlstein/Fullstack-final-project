@@ -10,7 +10,7 @@ import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 dotenv.config();
 const MONGO_STRING = process.env.MONGO_STRING;
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT;
 
 mongoose
   .connect(MONGO_STRING)
@@ -21,10 +21,7 @@ mongoose
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://fullstack-final-project-1.onrender.com",
-];
+const allowedOrigins = ["https://fullstack-final-project-1.onrender.com", ,];
 
 app.use(
   cors({
@@ -38,7 +35,6 @@ app.use(
     credentials: true,
   })
 );
-
 app.get("/", (req, res) => {
   res.send("welcome to test application!");
 });
