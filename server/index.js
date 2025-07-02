@@ -21,12 +21,24 @@ mongoose
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://fullstack-final-project-1.onrender.com",
+];
+
 app.use(
   cors({
-    origin: "https://fullstack-final-project-1.onrender.com",
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
+
 app.get("/", (req, res) => {
   res.send("welcome to test application!");
 });
