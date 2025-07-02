@@ -1,0 +1,102 @@
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+  color: #333;
+  direction: ltr;
+  border-collapse: collapse;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #d32f2f;
+}
+
+.empty {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #999;
+}
+
+.orderCard {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 3px 2px 20px 8px rgba(0, 0, 0, 0.05);
+}
+
+.orderId {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #444;
+}
+
+.itemList {
+  padding-left: 1.2rem;
+  margin: 0.5rem 0 1rem 0;
+  list-style: none;
+}
+
+.item {
+  margin-bottom: 0.3rem;
+}
+
+.deleteBtn {
+  padding: 0.4rem 0.8rem;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.deleteBtn:hover {
+  background-color: #c62828;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .orderCard {
+    padding: 1rem;
+  }
+
+  .orderId {
+    font-size: 0.9rem;
+  }
+
+  .itemList {
+    padding-left: 0.8rem;
+  }
+
+  .deleteBtn {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 415px) {
+  .title {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    padding: 0rem;
+  }
+}

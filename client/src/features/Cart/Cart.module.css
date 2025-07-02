@@ -1,0 +1,159 @@
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+  color: #333;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #d32f2f;
+}
+
+.empty {
+  display: block;
+  text-align: center;
+  color: #999;
+  font-size: 1.2rem;
+}
+
+.cartList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.cartCard {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  width: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.quantity button {
+  padding: 0.3rem 0.6rem;
+  border: none;
+  background-color: #d32f2f;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.quantity button:hover {
+  background-color: #ca6060;
+}
+
+.removeBtn {
+  align-self: flex-start;
+  padding: 0.4rem 0.8rem;
+  background-color: #7983ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.removeBtn:hover {
+  background-color: #636dff;
+}
+
+.total {
+  text-align: right;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  color: #d32f2f;
+}
+
+.clearBtn,
+.placeOrderBtn {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  margin-right: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.clearBtn {
+  background-color: #7983ff;
+  color: white;
+  transition: background 0.2s;
+}
+
+.clearBtn:hover {
+  background-color: #636dff;
+}
+
+.placeOrderBtn {
+  background-color: #d32f2f;
+  color: white;
+}
+
+.placeOrderBtn:hover {
+  background-color: #c62828;
+}
+
+@media (max-width: 480px) {
+  .cartCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .image {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .details {
+    align-items: flex-start;
+  }
+
+  .quantity {
+    justify-content: center;
+  }
+
+  .total {
+    text-align: center;
+  }
+
+  .clearBtn,
+  .placeOrderBtn {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}

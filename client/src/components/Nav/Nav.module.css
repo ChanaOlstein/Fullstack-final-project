@@ -1,0 +1,95 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  z-index: 1000;
+  background-color: white;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #d32f2f;
+}
+
+.nav {
+  display: flex;
+}
+
+.pages {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.navLink {
+  color: #d32f2f;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.userName {
+  color: #d32f2f;
+  font-weight: bold;
+}
+
+.navLink:hover {
+  background-color: #ffeaea;
+}
+
+.navLink:focus {
+  outline: 2px solid #d32f2f;
+  outline-offset: 2px;
+}
+
+.navLink:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.navLink::first-letter {
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pages {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .navLink {
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 507px) {
+  .header {
+    align-items: center;
+  }
+  .pages {
+    flex-direction: column;
+    align-items: center;
+  }
+}

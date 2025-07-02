@@ -1,0 +1,29 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+.shoppingApp {
+  margin: 10px auto;
+  padding: 20px;
+  padding-top: 80px;
+}
+.routes {
+  margin-top: 10px;
+}
+
+@media (max-width: 845px) {
+  .routes {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 507px) {
+  .routes {
+    margin-top: 180px;
+  }
+}

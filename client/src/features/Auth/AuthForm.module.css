@@ -1,0 +1,85 @@
+.authContainer {
+  max-width: 400px;
+  margin: 5rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.authContainer h2 {
+  margin-bottom: 1.5rem;
+  color: #d32f2f;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
+
+.authForm label {
+  display: none;
+}
+
+.authForm input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.authForm button {
+  padding: 0.8rem;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.authForm button:hover {
+  background-color: #b71c1c;
+}
+
+.errorMessage {
+  color: red;
+  margin-top: 0.5rem;
+}
+
+.authLinks {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.authLinks a {
+  color: #d32f2f;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.successMessage {
+  color: green;
+  margin-top: 1rem;
+  font-weight: bold;
+  animation: fadeOut 1s ease-in-out 3s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
