@@ -62,7 +62,7 @@ const SignIn = () => {
 
         <label htmlFor="password"></label>
         <input
-          type="text"
+          type="password"
           placeholder="Password:"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
