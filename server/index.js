@@ -21,7 +21,7 @@ mongoose
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-const allowedOrigins = ["https://fullstack-final-project-1.onrender.com", ,];
+const allowedOrigins = ["https://fullstack-final-project-1.onrender.com"];
 
 app.use(
   cors({
