@@ -12,6 +12,9 @@ dotenv.config();
 const MONGO_STRING = process.env.MONGO_STRING;
 const PORT = process.env.PORT;
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 mongoose
   .connect(MONGO_STRING)
 
@@ -43,6 +46,12 @@ app.use("/auth", authRouter);
 app.use("/products", productsRouter);
 app.use("/orders", ordersRouter);
 app.use("/carts", cartRouter);
+
+app.use(express.static(path.join(__dirname, "client", "dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
+
 app.listen(PORT, () =>
   console.log(
     "server is running in port https://fullstack-final-project-5bku.onrender.com"
