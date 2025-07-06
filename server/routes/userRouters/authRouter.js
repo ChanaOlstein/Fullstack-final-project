@@ -16,6 +16,8 @@ router.post("/register", async (req, res) => {
     if (name.length < 3)
       return res.status(400).send("name should have at least 3 character");
     if (!email.includes("@")) return res.status(400).send("invalid email");
+    if (password.length < 6)
+      return res.status(400).send("password should have at least 6 digits");
 
     const isExist = await users.findOne({ email });
     if (isExist) return res.status(400).send("user already exist");

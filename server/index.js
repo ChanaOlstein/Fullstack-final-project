@@ -12,9 +12,6 @@ dotenv.config();
 const MONGO_STRING = process.env.MONGO_STRING;
 const PORT = process.env.PORT;
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 mongoose
   .connect(MONGO_STRING)
 
@@ -24,20 +21,17 @@ mongoose
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
-const allowedOrigins = ["https://fullstack-final-project-1.onrender.com"];
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
+    origin: [
+      "http://localhost:5173",
+      "https://fullstack-final-project-1.onrender.com",
+    ], // Your frontend URL
+    credentials: true, // Allow sending cookies
   })
 );
+
 app.get("/", (req, res) => {
   res.send("welcome to test application!");
 });
@@ -46,11 +40,6 @@ app.use("/auth", authRouter);
 app.use("/products", productsRouter);
 app.use("/orders", ordersRouter);
 app.use("/carts", cartRouter);
-
-app.use(express.static(path.join(__dirname, "client", "dist")));
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
 
 app.listen(PORT, () =>
   console.log(
